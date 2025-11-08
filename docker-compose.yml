@@ -1,0 +1,31 @@
+services:
+  app1:
+    build:
+      context: ./app
+      args:
+        INSTANCE_NAME: "APP1"
+    container_name: app1
+  app2:
+    build:
+      context: ./app
+      args:
+        INSTANCE_NAME: "APP2"
+    container_name: app2
+  app3:
+    build:
+      context: ./app
+      args:
+        INSTANCE_NAME: "APP3"
+    container_name: app3
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_lb
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - app1
+      - app2
+      - app3
