@@ -22,9 +22,8 @@ Este projeto demonstra o uso do Nginx como balanceador de carga (load balancer) 
    docker-compose up --build
 ```
 2. Acesse no navegador:
-```
    [http://localhost:8080](http://localhost:8080)
-```
+
 3. A página deve alternar entre as respostas das instâncias (APP1, APP2, APP3), indicando o balanceamento de carga.
 
 Notas:
