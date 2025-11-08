@@ -1,0 +1,30 @@
+# --- Docker ---
+# Arquivos temporários, caches e logs
+*.pid
+*.log
+*.tmp
+*.bak
+*.old
+*.tar
+
+# Variáveis de ambiente (se existirem no futuro)
+.env
+.env.*
+
+# Volumes, se você adicionar pastas de dados depois
+volumes/
+data/
+tmp/
+
+# --- Sistema ---
+.DS_Store
+Thumbs.db
+
+# --- IDEs / editores ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Git ---
+# Este arquivo é controlado, então não ignore o próprio .gitignore
