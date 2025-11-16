@@ -1,10 +1,8 @@
 FROM nginx:alpine
-
 ARG INSTANCE_NAME=UNKNOWN
-ENV INSTANCE_NAME=${INSTANCE_NAME}
 
-# esta linha força o cache a invalidar quando INSTANCE_NAME muda
-RUN echo "Building instance ${INSTANCE_NAME}"
+# Copia o build inteiro do Car Culture
+COPY dist/ /usr/share/nginx/html/
 
-COPY index.html /usr/share/nginx/html/index.html
+# Insere a identificação da instância dentro do index.html
 RUN sed -i "s/<!-- INSTANCE -->/${INSTANCE_NAME}/" /usr/share/nginx/html/index.html
